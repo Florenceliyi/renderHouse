@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-
+import { renderRoutes } from "react-router-config";
 class MapFound extends Component {
   render() {
-    return <div>MapFound</div>;
+    console.log(this.props);
+    return <div>{renderRoutes(this.props.route.routes)}</div>;
   }
 }
 

@@ -1,21 +1,22 @@
 import React from "react";
-// 1 引入 ant 组件
-import { Button } from "antd-mobile";
 // 引入页面组件
 import Home from "./pages/Home";
+import Tab from "./pages/Index";
+import "./static/fonts/iconfont.css";
+import { HashRouter, withRouter } from "react-router-dom";
+import { renderRoutes } from "react-router-config";
+import routers from "./router";
 
 class App extends React.Component {
   render() {
     return (
-      <>
-        <Home></Home>
-        {/* 2 使用 */}
-        <h1 className="bg_color">主体颜色</h1>
-        <div>
-          <Button type="primary">按钮</Button>
-        </div>
-      </>
+      <div>
+        <Home />
+        <Tab />
+
+        {renderRoutes(routers)}
+      </div>
     );
   }
 }
-export default App;
+export default withRouter(App);
